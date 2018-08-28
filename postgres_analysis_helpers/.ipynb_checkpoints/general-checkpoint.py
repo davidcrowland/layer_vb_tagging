@@ -135,7 +135,7 @@ def draw_path_spike_plots(df,column_names,number_plots,speed_cutoff=5.,offset=0,
 
 def draw_ratemaps(ratemaps_cells,column_name,number_plots,offset, cmp = 'inferno'):
     figure = plt.figure(figsize=(17,17),facecolor='w')
-    df = ratemaps_cells.reset_index()
+    df = ratemaps_cells.reset_index(drop = True)
     for row in tqdm_notebook(np.arange(number_plots)):
         row = row + offset
         ax = figure.add_subplot(5,5,row-offset+1)
